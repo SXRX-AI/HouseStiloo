@@ -1,0 +1,90 @@
+/* Estilos generales del resumen de compra */
+.resumen-carrito {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.resumen-carrito h4 {
+  font-weight: bold;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  color: #000;
+  text-align: center;
+}
+
+.linea-resumen {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.total {
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* Botones dentro del resumen */
+#resumen-carrito .btn {
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Botón oscuro */
+#resumen-carrito .btn-dark {
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+#resumen-carrito .btn-dark:hover {
+  background-color: #333;
+}
+
+/* Botón de peligro (vaciar) */
+#resumen-carrito .btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+#resumen-carrito .btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Botón secundario (seguir comprando) */
+#resumen-carrito .btn-outline-secondary {
+  border-color: #6c757d;
+  color: #6c757d;
+}
+
+#resumen-carrito .btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+/* Responsive: adapta el resumen a pantallas pequeñas */
+@media (max-width: 768px) {
+  .resumen-carrito {
+    padding: 20px;
+    margin-top: 40px;
+  }
+
+  .linea-resumen {
+    font-size: 0.95rem;
+  }
+
+  .resumen-carrito h4 {
+    font-size: 1.3rem;
+  }
+
+  .total {
+    font-size: 1.1rem;
+  }
+}

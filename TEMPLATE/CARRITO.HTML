@@ -1,0 +1,162 @@
+<!-- carrito.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito de Compras - HOUSE STILO</title>
+  
+  <!-- Estilos Bootstrap y personalizados -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/carrito.css" />
+
+  <!-- Íconos FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- Logo e identidad -->
+            <div class="d-flex align-items-center gap-3">
+                <a href="../INDEX.HTML">
+                    <img src="https://png.pngtree.com/png-clipart/20230926/original/pngtree-vector-icon-of-neatly-folded-linens-and-pillows-vector-png-image_12785105.png" alt="Logo" width="100" height="100">
+                </a>
+                <h1 class="text-white m-0">HOUSE STILO</h1>
+            </div>
+
+            <!-- Menú hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../INDEX.HTML">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./PRODUCTOS.HTML">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./NOSOTROS.HTML">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./CONTACTO.HTML">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Contenedor de íconos: búsqueda, usuario y carrito -->
+            <div class="d-flex align-items-center gap-3 flex-wrap justify-content-lg-end justify-content-center mt-3 mt-lg-0">
+
+                <!-- Buscador -->
+                <div class="buscarbox d-flex align-items-center">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i>
+                    <input type="text" placeholder="Buscar acá..." class="form-control form-control-sm">
+                </div>
+
+                <!-- Usuario -->
+                <div id="reguser">
+                    <a href="./FORM_INICIO.HTML"><i class="fa-solid fa-user fa-lg text-white"></i></a>
+                </div>
+
+                <!-- Carrito -->
+                <div id="cart-icon" class="position-relative">
+                    <a href="./CARRITO.HTML"><i class="fa-solid fa-shopping-cart fa-lg text-white"></i></a>
+                    <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  <!-- Contenido -->
+  <main class="container my-5">
+  <div class="row g-5">
+    <!-- Productos -->
+    <div class="col-lg-8">
+      <h2 class="mb-4">Carrito de Compras</h2>
+
+      <div id="empty-cart-message" class="text-center py-5 d-none">
+        <i class="fas fa-shopping-cart fa-4x mb-3 text-muted"></i>
+        <h3 class="text-muted">Tu carrito está vacío</h3>
+        <p>¡Explora nuestros productos y encuentra algo especial!</p>
+        <a href="./PRODUCTOS.HTML" class="btn btn-dark mt-3">Ver Productos</a>
+      </div>
+
+      <div id="carrito-productos" class="mb-4"></div>
+    </div>
+
+    <!-- Resumen de Compra -->
+    <div class="col-lg-4">
+      <div id="resumen-carrito" class="resumen-carrito">
+        <h4>Resumen de Compra</h4>
+        <div class="linea-resumen">
+          <span>Cantidad total:</span>
+          <span id="cart-quantity">0</span>
+        </div>
+        <div class="linea-resumen">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal">$0</span>
+        </div>
+        <div class="linea-resumen">
+          <span>IVA (19%):</span>
+          <span id="cart-iva">$0</span>
+        </div>
+        <div class="linea-resumen">
+          <span>Envío:</span>
+          <span id="cart-shipping">$0</span>
+        </div>
+        <hr>
+        <div class="linea-resumen total">
+          <strong>Total:</strong>
+          <strong id="cart-total">$0</strong>
+        </div>
+        <button id="checkout-btn" class="btn btn-dark w-100 mt-3">Proceder al Pago</button>
+        <button id="clear-cart" class="btn btn-outline-danger w-100 mt-2">Vaciar Carrito</button>
+        <a href="./PRODUCTOS.HTML" class="btn btn-outline-secondary w-100 mt-2">Seguir Comprando</a>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- Toast Moderno -->
+<div id="toast" class="toast"></div>
+
+  <!-- Toast -->
+  <!-- Toast personalizado con ícono de éxito -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+  <div id="custom-toast" class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true" style="display: none; min-width: 250px;">
+    <div class="d-flex">
+      <div class="toast-body d-flex align-items-center gap-2">
+        <i class="fas fa-check-circle fa-lg"></i>
+        <span id="custom-toast-message">Producto agregado</span>
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" onclick="ocultarToast()" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+
+  <br><br>
+  <!-- Pie de página -->
+    <footer id="footer">
+        <div class="container text-center">
+            <div id="redes">
+                <a href="https://www.instagram.com/house_stilx//" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/house.stilo/" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://web.whatsapp.com/">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://tiktok.com">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://x.com/?lang=es">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+            <h6>Todos los derechos reservados &copy; 2025 Sara Jiménez</h6>
+        </div>
+    </footer>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../JS/Carrito.js"></script>
+</body>
+</html>

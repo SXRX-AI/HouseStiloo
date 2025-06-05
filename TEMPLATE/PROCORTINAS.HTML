@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cortinas - HOUSE STILO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/STYLE.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- Logo e identidad -->
+            <div class="d-flex align-items-center gap-3">
+                <a href="./INDEX.HTML">
+                    <img src="https://png.pngtree.com/png-clipart/20230926/original/pngtree-vector-icon-of-neatly-folded-linens-and-pillows-vector-png-image_12785105.png" alt="Logo" width="100" height="100">
+                </a>
+                <h1 class="text-white m-0">HOUSE STILO</h1>
+            </div>
+
+            <!-- Menú hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../INDEX.HTML">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./PRODUCTOS.HTML">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./NOSOTROS.HTML">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./CONTACTO.HTML">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Íconos -->
+            <div class="d-flex align-items-center gap-3 flex-wrap justify-content-lg-end justify-content-center mt-3 mt-lg-0">
+                <!-- Buscador -->
+                <div class="buscarbox d-flex align-items-center">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i>
+                    <input type="text" placeholder="Buscar acá..." class="form-control form-control-sm">
+                </div>
+
+                <!-- Usuario -->
+                <div id="reguser">
+                    <a href="./FORM_INICIO.HTML"><i class="fa-solid fa-user fa-lg text-white"></i></a>
+                </div>
+
+                <!-- Carrito -->
+                <div id="cart-icon" class="position-relative">
+                    <a href="./CARRITO.HTML"><i class="fa-solid fa-shopping-cart fa-lg text-white"></i></a>
+                    <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Título -->
+    <div class="container mt-5">
+        <h2 class="text-center">Cortinas</h2>
+        <p class="text-center">Explora nuestra variedad de cortinas</p>
+        <br>
+
+        <!-- Tarjetas de productos -->
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-lg rounded-4">
+                    <img src="../IMG/CORTINAS Blackout Elegantes.webp" class="card-img-top rounded-top-4" alt="Blackout Elegantes" height="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Blackout Elegantes</h5>
+                        <p class="card-text">Dale a tu espacio un toque sofisticado y disfruta de oscuridad total con nuestras cortinas blackout. Controla la luz y el clima en tu hogar con estilo.</p>
+                        <p class="precio fw-bold">$65,000 COP</p>
+                        <button class="btn btn-primary add-to-cart" data-nombre="Blackout Elegantes" data-precio="65000" data-img="../IMG/CORTINAS Blackout Elegantes.webp">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-lg rounded-4">
+                    <img src="../IMG/CORTINAS Sheer o Traslúcidas.webp" class="card-img-top rounded-top-4" alt="Sheer o Traslúcidas" height="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Sheer o Traslúcidas</h5>
+                        <p class="card-text">Ilumina tu hogar con un diseño sutil y refinado. Aportan luz natural sin perder privacidad. ¡Haz que tu espacio brille!</p>
+                        <p class="precio fw-bold">$45,000 COP</p>
+                        <button class="btn btn-primary add-to-cart" data-nombre="Sheer o Traslúcidas" data-precio="45000" data-img="../IMG/CORTINAS Sheer o Traslúcidas.webp">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-lg rounded-4">
+                    <img src="../IMG/CORTINAS Drapeadas Clásicas.webp" class="card-img-top rounded-top-4" alt="Drapeadas Clásicas" height="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Drapeadas Clásicas</h5>
+                        <p class="card-text">De tela gruesa y caída elegante, ideales para dar un toque clásico y lujoso a cualquier habitación. Combinables con forros blackout o sheer.</p>
+                        <p class="precio fw-bold">$70,000 COP</p>
+                        <button class="btn btn-primary add-to-cart" data-nombre="Drapeadas Clásicas" data-precio="70000" data-img="../IMG/CORTINAS Drapeadas Clásicas.webp">Agregar al carrito</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+                <div id="cart-toast" class="toast align-items-center text-white bg-success border-0"role="alert"aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">Producto agregado al carrito ✅</div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de regreso -->
+        <div class="text-center mt-5">
+            <a href="./PRODUCTOS.HTML" class="btn btn-outline-dark px-4">← Volver a Productos</a>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer id="footer" class="mt-5 bg-dark text-white pt-4 pb-3">
+        <div class="container text-center">
+            <div id="redes" class="mb-3">
+                <a href="https://www.instagram.com/house_stilx/" target="_blank"><i class="fab fa-instagram fa-lg mx-2 text-white"></i></a>
+                <a href="https://www.facebook.com/house.stilo/" target="_blank"><i class="fab fa-facebook fa-lg mx-2 text-white"></i></a>
+                <a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-whatsapp fa-lg mx-2 text-white"></i></a>
+                <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok fa-lg mx-2 text-white"></i></a>
+                <a href="https://x.com/?lang=es" target="_blank"><i class="fa-brands fa-x-twitter fa-lg mx-2 text-white"></i></a>
+            </div>
+            <h6>Todos los derechos reservados &copy; 2025 Sara Jiménez</h6>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/Carrito.js"></script>
+</body>
+</html>

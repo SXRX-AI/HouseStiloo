@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOUSE STILO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/STYLE.CSS">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <!-- Logo e identidad -->
+            <div class="d-flex align-items-center gap-3">
+                <a href="./INDEX.HTML">
+                    <img src="https://png.pngtree.com/png-clipart/20230926/original/pngtree-vector-icon-of-neatly-folded-linens-and-pillows-vector-png-image_12785105.png" alt="Logo" width="100" height="100">
+                </a>
+                <h1 class="text-white m-0">HOUSE STILO</h1>
+            </div>
+
+            <!-- Menú hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Enlaces de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../INDEX.HTML">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./PRODUCTOS.HTML">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./NOSOTROS.HTML">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./CONTACTO.HTML">Contacto</a></li>
+                </ul>
+            </div>
+
+            <!-- Contenedor de íconos: búsqueda, usuario y carrito -->
+            <div class="d-flex align-items-center gap-3 flex-wrap justify-content-lg-end justify-content-center mt-3 mt-lg-0">
+
+                <!-- Buscador -->
+                <div class="buscarbox d-flex align-items-center">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i>
+                    <input type="text" placeholder="Buscar acá..." class="form-control form-control-sm">
+                </div>
+
+                <!-- Usuario -->
+                <div id="reguser">
+                    <a href="./FORM_INICIO.HTML"><i class="fa-solid fa-user fa-lg text-white"></i></a>
+                </div>
+
+                <!-- Carrito -->
+                <div id="cart-icon" class="position-relative">
+                    <a href="./CARRITO.HTML"><i class="fa-solid fa-shopping-cart fa-lg text-white"></i></a>
+                    <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Sección de productos: Sábanas -->
+    <div class="container mt-5">
+        <h2 class="text-center">Sábanas</h2>
+        <p class="text-center">Explora nuestra variedad de sábanas, diseñadas para el mejor descanso.</p>
+        <br><br>
+
+        <div class="row">
+            <!-- Sábanas Dobles -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="../IMG/SABANAS.webp" class="card-img-top" alt="Sábana Premium" height="400" width="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Sábanas Dobles</h5>
+                        <p class="card-text">Sábanas suaves y transpirables, ideales para un descanso placentero.</p>
+                        <p class="precio">$60,000 COP</p>
+                        <button class="btn btn-primary add-to-cart" data-nombre="Sábanas Dobles" data-precio="60000" data-img="../IMG/SABANAS.webp">Agregar al carrito</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sábanas Infantiles -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="../IMG/SABANAS INFANTILES.webp" class="card-img-top" alt="Sábana Satinada" height="400" width="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Sábana Infantiles</h5>
+                        <p class="card-text">Dale un toque de lujo a tu habitación con nuestra sábana satinada.</p>
+                        <p class="precio">$50,000 COP</p>
+                        <button class="btn btn-primary add-to-cart" data-nombre="Sábanas Infantiles" data-precio="50000" data-img="../IMG/SABANAS INFANTILES.webp">Agregar al carrito</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sábanas Queen y King -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="../IMG/SABANAS KING.webp" class="card-img-top" alt="Sábana Antialérgica" height="400" width="400">
+                    <div class="card-body">
+                        <h5 class="card-title">Queen y King</h5>
+                        <p class="card-text">Especialmente diseñada para pieles sensibles y climas fríos.</p>
+                        <p class="precio">$70,000 COP</p>
+                        <button class="btn btn-primary add-to-cart" data-nombre="Sábanas Queen y King" data-precio="70000" data-img="../IMG/SABANAS KING.webp">Agregar al carrito</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1055;">
+                <div id="cart-toast" class="toast align-items-center text-white bg-success border-0"role="alert"                    aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">Producto agregado al carrito ✅</div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botón volver -->
+        <a href="./PRODUCTOS.HTML" class="btn btn-secondary mt-3">Volver a Productos</a>
+    </div>
+
+    <!-- Pie de página -->
+    <footer id="footer" class="mt-5">
+        <div class="container text-center">
+            <div id="redes">
+                <a href="https://www.instagram.com/house_stilx/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/house.stilo/" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://web.whatsapp.com/"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://tiktok.com"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://x.com/?lang=es"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+            <h6>Todos los derechos reservados &copy; 2025 Sara Jiménez</h6>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/Carrito.js"></script>
+</body>
+</html>
